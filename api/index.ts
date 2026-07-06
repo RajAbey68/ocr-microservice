@@ -1,10 +1,10 @@
 /**
- * Vercel Serverless Function — wraps the Express app for Vercel deployment.
+ * Vercel Serverless Function — wraps Express for Vercel deployment.
  *
- * Uses serverless-http to convert Express to a Vercel-compatible handler.
+ * Vercel's @vercel/node builder supports Express natively.
+ * The app must export a handler matching the Vercel (req, res) signature.
  */
 
-import serverless from 'serverless-http';
 import app from '../src/app';
 
-export const handler = serverless(app);
+export default app;
