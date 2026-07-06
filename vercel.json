@@ -1,8 +1,14 @@
 {
-  "rewrites": [
-    { "source": "/health", "destination": "/api" },
-    { "source": "/ocr", "destination": "/api" },
-    { "source": "/ocr/pdf", "destination": "/api" },
-    { "source": "/", "destination": "/api" }
+  "builds": [
+    {
+      "src": "api/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/health", "dest": "/api/index.ts" },
+    { "src": "/ocr", "dest": "/api/index.ts" },
+    { "src": "/ocr/pdf", "dest": "/api/index.ts" },
+    { "src": "/", "dest": "/api/index.ts" }
   ]
 }
