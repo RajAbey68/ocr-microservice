@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "api/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/ocr", "dest": "/api/index" },
+    { "src": "/ocr/pdf", "dest": "/api/index" },
+    { "src": "/health", "dest": "/api/index" },
+    { "src": "/", "dest": "/api/index" }
+  ]
+}
